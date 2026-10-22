@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  php-app:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - node-service
+    environment:
+      - NODE_SERVICE_URL=http://node-service:3000
+  node-service:
+    build: ./node-service
+    ports:
+      - "3000:3000"
