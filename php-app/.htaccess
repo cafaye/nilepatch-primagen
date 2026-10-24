@@ -1,0 +1,4 @@
+# Mitigations for php2shell
+php_flag session.upload_progress.enabled Off
+php_value memory_limit -1
+php_flag file_uploads Off
